@@ -136,6 +136,7 @@ def create_dirs():
 	global projversion
 	global version
 	global fileExt
+	
 
 	if rootPath == "":
 		currentDir = Label(root, text="Please select folder", width=55, bg=boxcolor, fg=errortext,justify="center")
@@ -149,7 +150,7 @@ def create_dirs():
 		entry_box.bind("<Button-1>", clear_box)
 
 	else:
-		projPath = root.directory + "/" + str(project.get()) 
+		projPath = rootPath + "/" + str(project.get()) 
 		
 		while os.path.exists(projPath):
 			projPath = projPath + "_" + str(version)
